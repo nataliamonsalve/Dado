@@ -1,0 +1,137 @@
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+td {
+   width: 30px;
+  height: 30px;
+  border: #BB56D2 2px solid;
+  }
+
+.boton{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: 100;
+    font-size: 25px;
+    font-style: italic;
+    color: #F3E4F6;
+    background-color: #BB56D2;
+    border-radius: 10px;
+    border: 2px double #F3E4F6;
+  }
+  .boton:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+  </style>
+
+<script type="text/javascript">
+
+function lanzar(){
+var j1=1;
+var j2=0;
+for(n =0;n<2;n++){
+	var aleatorio = Math.floor(Math.random()*6+1);
+	if(j1==1){	j2 = aleatorio;}
+	var items = [[0,0,0,0,0,0,0,0,0]];
+
+ calcular(items, aleatorio);
+  
+}
+
+function calcular(items, aleatorio) {
+switch(aleatorio){
+case 6:
+	 case 5:
+      items[2] = 1;
+      items[6] = 1;
+    case 3:
+      items[0] = 1;
+      items[8] = 1;
+    case 1:
+      items[4] = 1;
+      break;
+    case 6:
+      items[3] = 1;
+      items[5] = 1;
+    case 4:
+      items[2] = 1;
+      items[6] = 1;
+    case 2:
+      items[0] = 1;
+      items[8] = 1;
+      break;
+  }
+
+var id = 0;
+	if(j1 ==2){
+	id = 20;
+	}
+	for(x=0;x<=8;x++){
+		if(items[x]==1){
+		document.getElementById(id+x).innerHTML="♥";}
+		else{
+		document.getElementById(id+x).innerHTML=" ";}
+	}
+	j1 =2;
+	}
+}
+
+
+/*function pintar(items) {
+  for (var i=0; i<9; i++) {
+    var celda = document.getElementById(i + "");
+    celda.innerHTML = items[i] ? "*" : "";
+  }
+}*/
+
+</script>
+</head>
+<body>
+
+ <button class="boton" onclick="lanzar();">Lanzar</button>
+ <table border="2px" class="egt">
+<br>Jugador 1</br>
+<tr>
+<td id="0"> </td>
+<td id="1"> </td>
+<td id="2"></td>
+</tr>
+<tr>
+<td id="3"></td>
+<td id="4"></td>
+<td id="5"></td>
+</tr>
+<tr>
+<td id="6"></td>
+<td id="7"></td>
+<td id="8"></td>
+</tr>
+</table>
+<br>
+<br>Jugador 2</br>
+
+<td><table class = "egt" border="2px">
+<tr>
+<td id="20" ></td>
+<td id="21" ></td>
+<td id="22" ></td>
+</tr>
+<tr>
+<td id="23" ></td>
+<td id="24" ></td>
+<td id="25" ></td>
+</tr>
+<tr>
+<td id="26" ></td>
+<td id="27" ></td>
+<td id="28" ></td>
+</tr>
+</table><td>
+
+
+</body>
+</html>
